@@ -1,0 +1,19 @@
+<div class="container">
+    <img src=" <img src="{{/public}}/img/burger.png" alt="burger"/>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Burgers!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <ul>
+                {{#each burger}}
+                <h4>{{burger_name}}</h4>
+                <h4>{{devoured}}</h4>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+</div>
