@@ -16,13 +16,15 @@ var burger = {
       },
     
 
-    updateOne: function(objColVals,condition,cb){
-          orm.updateOne("burgers",objColVals,condition,function(res){
-              cb(res);
-          });
+    updateOne: function(id,cb){
+          var condition = "id=" + id;
+          orm.updateOne("burgers",{
+              devoured: true
+          }, condition,cb)
+        },
+    
 
       }
-}
 
 
 

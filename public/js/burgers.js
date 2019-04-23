@@ -28,7 +28,7 @@ $(".create-form").on("submit", function(event) {
 
     var burger_id = $(this).attr("data-id")
     $.ajax({
-        method: PUT,
+        method: "PUT",
         url: "/" + burger_id
     }).then(function(res) {
         console.log(res);

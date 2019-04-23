@@ -22,8 +22,12 @@ router.get("/", function(req, res) {
 
     });
 router.put("/:id", function(req,res) {
-    burger.updateOne(req.params.id);
-    res.sendStatus(200)
+    // burger.updateOne(req.params.id,,, function(result){
+    burger.updateOne(req.params.id, function(result){
+        console.log(result);
+
+        res.sendStatus(200);
+    });
 });
 
 
