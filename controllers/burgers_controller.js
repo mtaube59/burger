@@ -14,13 +14,17 @@ router.get("/", function(req, res) {
   });
 
   router.post("/", function(req,res) {
-      burger.insertOne("name",req.body.burger_name,function(data){
+      burger.insertOne("burger_name",req.body.burger_name,function(data){
           console.log(data);
           res.redirect("/")
       })
      
-    });
 
+    });
+router.put("/:id", function(req,res) {
+    burger.updateOne(req.params.id);
+    res.sendStatus(200)
+});
 
 
 

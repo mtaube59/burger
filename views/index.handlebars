@@ -10,7 +10,9 @@
             <h3>Burgers Not Devoured</h3>
             <ul>
                 {{#each burger}}
-                <h4>{{burger_name}}</h4>
+                {{#unless devoured}}
+                <h4>{{burger_name}}</h4><button class="devour" data-id="{{id}}">Devour!</button>
+                {{/unless}}
                 {{/each}}
             </ul>
         </div>
@@ -18,7 +20,7 @@
             <h3>Burgers Devoured</h3>
             <ul>
                 {{#each burger}}
-                {{#if Devoured}}
+                {{#if devoured}}
                 <h4>{{burger_name}}</h4>
                 {{/if}}
                 {{/each}}
@@ -31,10 +33,11 @@
 
         <div class="form-group">
             <label for="burger">Burger Name:</label>
-            <input type="text" id="burg" name="name">
+            <input type="text" id="burg" name="burger_name">
         </div>
 
-        <button type="submit"id="submit">Add Burger</button>
+        <button id="burgSubmit" type="submit">Add Burger</button>
     </form>
+    <br><br>
 
 </div>
